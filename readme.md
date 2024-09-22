@@ -6,6 +6,7 @@ git clone https://github.com/PiotrLisowski88/my-java-crud-rest-app.git
 Create .env file as provided .env.example and fill it with given database credentials. 
 ```
 ## Running the application
+```
 To run the application, you need to have Java 17 installed on your machine.
 You can download it from [here](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 
