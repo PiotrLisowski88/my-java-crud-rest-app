@@ -19,7 +19,7 @@ Go to the
 
 and
 ```    
-.docker-compose up --build  
+docker-compose up --build  
 ```
 After docker image is built, you can access the application on `http://localhost:8080/`
 
