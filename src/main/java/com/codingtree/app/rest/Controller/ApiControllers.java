@@ -1,6 +1,6 @@
 package com.codingtree.app.rest.Controller;
 
-import com.codingtree.app.rest.Models.Student;
+import com.codingtree.app.rest.Models.Students;
 import com.codingtree.app.rest.Repo.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,30 +19,30 @@ public class ApiControllers {
     }
 
     @GetMapping(value = "/students")
-    public List<Student> getStudents() {
+    public List<Students> getStudents() {
         return studentRepo.findAll();
     }
 
     @PostMapping(value = "/add")
-    public String addStudent(@RequestBody Student student) {
-        studentRepo.save(student);
-        return "Student is successfully saved";
+    public String addStudent(@RequestBody Students students) {
+        studentRepo.save(students);
+        return "Students is successfully saved";
     }
 
     @PutMapping(value = "/update/{id}")
-    public String updateStudent(@PathVariable long id, @RequestBody Student student) {
-        Student updatedStudent = studentRepo.findById(id).get();
-        updatedStudent.setFirstName(student.getFirstName());
-        updatedStudent.setLastName(student.getLastName());
-        updatedStudent.setAge(student.getAge());
-        studentRepo.save(updatedStudent);
-        return "Data for student id: " + id + " have been updated";
+    public String updateStudent(@PathVariable long id, @RequestBody Students students) {
+        Students updatedStudents = studentRepo.findById(id).get();
+        updatedStudents.setFirstName(students.getFirstName());
+        updatedStudents.setLastName(students.getLastName());
+        updatedStudents.setAge(students.getAge());
+        studentRepo.save(updatedStudents);
+        return "Data for students id: " + id + " have been updated";
     }
 
     @DeleteMapping(value = "/delete/{id}")
     public String deleteStudent(@PathVariable long id) {
-        Student deleteStudent = studentRepo.findById(id).get();
-        studentRepo.delete(deleteStudent);
-        return "Student with the id: " + id + " has been removed";
+        Students deleteStudents = studentRepo.findById(id).get();
+        studentRepo.delete(deleteStudents);
+        return "Students with the id: " + id + " has been removed";
     }
 }

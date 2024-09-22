@@ -3,7 +3,7 @@ package com.codingtree.app.rest.Models;
 import jakarta.persistence.*;
 
 @Entity
-public class Student {
+public class Students {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
